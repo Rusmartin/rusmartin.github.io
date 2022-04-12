@@ -1,11 +1,10 @@
-
 main {
   background-color: #333333;
   max-width: 500px;
   margin: auto;
   padding: 20px;
   border-radius: 10px;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Lucida Console", "Courier New", monospace;   
 }
 h1{
   text-align: center;
