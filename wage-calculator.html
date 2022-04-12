@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+      This is the page head - it contains info the browser uses to display the page
+      You won't see what's in the head in the page
+      Scroll down to the body element for the page content
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <title>Wage calculator</title>
+
+    <!-- Meta tags for SEO and social sharing -->
+    <link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
+    <meta
+      name="description"
+      content="A simple website, built with Glitch. Remix it to get your own."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Hello World!" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://glitch-hello-website.glitch.me/" />
+    <meta
+      property="og:description"
+      content="A simple website, built with Glitch. Remix it to get your own."
+    />
+    <meta
+      property="og:image"
+      content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"
+    />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Import the webpage's stylesheet -->
+    <link rel="stylesheet" href="wage-calculator.css" />
+  </head>
+  <body>
+
+      <!-- Overlay content -->
+      <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="us-road-trip-tools.html">US road trip tools</a>
+    <a href="tip-calculator.html">Tip calculator</a>
+    <a href="currency-converter.html">Currency converter</a>
+    <a href="wage-calculator.html">Wage calculator</a>
+  </div>
+</div>
+
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+    <h1>Calculate your wage</h1>
+    <main>
+      <div class="main-left">
+        <div class="flex">
+          <p>Hours worked per week</p>
+          <input id="hours" type="number" />
+        </div>
+        <div class="flex">
+          <p>Pay rate per hour</p>
+          <input id="payrate" type="number" />
+        </div>
+        <div class="flex">
+          <p>Weekly wage</p>
+          <input id="weekly" type="number" />
+        </div>
+        <div class="flex">
+          <p>Bi-weekly wage</p>
+          <input id="biweekly" type="number" />
+        </div>
+        <div class="flex">
+          <p>Monthly wage</p>
+          <input id="monthly" type="number" />
+        </div>
+        <div class="flex asterix">
+          <p>Yearly wage <br>
+            <span> * 52 weeks</span>
+          </p>
+          <input id="yearly" type="number" />
+        </div>
+      </div>
+      <div class="btn" onclick="calculate()">
+        <button>Calculate</button>
+      </div>
+    </main>
+
+    <script>
+      function calculate() {
+        document.getElementById("weekly").value =
+          document.getElementById("hours").value *
+          document.getElementById("payrate").value;
+        document.getElementById("biweekly").value =
+          document.getElementById("weekly").value * 2;
+        document.getElementById("monthly").value =
+          document.getElementById("weekly").value * 4;
+        document.getElementById("yearly").value =
+          document.getElementById("weekly").value * 52;
+      }
+
+      function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+    </script>
+  </body>
+</html>
