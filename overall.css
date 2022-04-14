@@ -3,10 +3,13 @@
     right: 20px;
     top: 20px;
     font-size: 35px;
-    border: solid 1px;
-    border-radius: 40px;
-    padding: 10px;
 }
 .home a {
     color: #333;
+}
+
+@media (max-width: 767px) {
+    .home {
+        font-size: 25px;
+    }
 }
