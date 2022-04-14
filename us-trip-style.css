@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(to right, #ffffff , #eeeeee);
+    background-color: rgba(0,0,0, 0.9);
     color: #333;
     height: 80vh;
   font-family: "Lucida Console", "Courier New", monospace;
@@ -107,24 +107,14 @@ select:active {
 /* nav style */
 
 .overlay {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
-  overflow-x: hidden;
-  transition: 0.5s;
+    height: 85vh;
+    display: flex;
+    align-items: center;
 }
 
 .overlay-content {
-  position: relative;
-  top: 25%;
   width: 100%;
   text-align: center;
-  margin-top: 30px;
 }
 
 .overlay a {
@@ -154,4 +144,19 @@ select:active {
   top: 15px;
   right: 35px;
   }
+}
+
+footer{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+footer a {
+    color: #fff;
+}
+footer i {
+    font-size: 25px;
 }
