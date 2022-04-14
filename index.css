@@ -1,0 +1,63 @@
+body {
+    background-color: rgba(0,0,0, 0.9);
+    color: #333;
+    height: 80vh;
+  font-family: "Lucida Console", "Courier New", monospace;
+    display: flex;
+    flex-direction: column;
+}
+
+.overlay {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+}
+
+.overlay-content {
+  width: 100%;
+  text-align: center;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+footer{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+footer a {
+    color: #fff;
+}
+footer i {
+    font-size: 25px;
+}
