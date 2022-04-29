@@ -94,6 +94,23 @@
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
+        function myFunction() {
+    var bill = document.getElementById("bill").value;
+    var tip = document.getElementById("tip").value;
+    var people = document.getElementById("number").value;
+    
+    var tipperperson = tip / 100 * bill / parseFloat(people);
+        
+    var totaltip = tip / 100 * bill;
+        
+    var totalperperson = (parseFloat(bill) + parseFloat(totaltip)) / people;
+        
+    var totalbill = parseFloat(bill) + parseFloat(totaltip); 
+
+    document.getElementById("tipperperson").innerHTML= tipperperson.toFixed(2);
+    document.getElementById("totatlperperson").innerHTML=  totalperperson.toFixed(2);
+    document.getElementById("totalbill").innerHTML= totalbill.toFixed(2);
+    } 
     </script>
   </body>
 </html>
