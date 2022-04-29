@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>US Road Trip Useful Tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="us-trip-style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">  
+      <link rel="stylesheet" href="overall.css">
+    <script src="https://kit.fontawesome.com/ae5e25ad8f.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    
+    <!-- Overlay content -->
+      <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="us-road-trip-tools.html">US road trip tools</a>
+    <a href="tip-calculator.html">Tip calculator</a>
+    <a href="currency-converter.html">Currency converter</a>
+    <a href="wage-calculator.html">Wage calculator</a>
+    <a href="resume.html">Resume</a>
+  </div>
+</div>
+
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <div class="home">
+        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+    </div>
+    <main>
+      <div id="main">
+        <div class="container">
+          <div class="currency">
+            <select id="from_currency">
+              <option value="CAD" selected>CAD</option>
+              <option value="USD">USD</option>
+            </select>
+            <input type="number" id="from_ammount" placeholder="0" value="1" />
+          </div>
+
+          <div class="middle">
+            <button id="exchange" class="btn">Swap</button>
+            <div class="rate" id="rate"></div>
+          </div>
+
+          <div class="currency">
+            <select id="to_currency">
+              <option value="CAD">CAD</option>
+              <option value="USD" selected>USD</option>
+            </select>
+            <input type="number" id="to_ammount" placeholder="0" />
+          </div>
+        </div>
+
+        <div class="dblgrid">
+          <div class="container dbl">
+            <label
+              >Price per Gallon
+              <input type="number" id="PPG" />
+            </label>
+            <label
+              >Price per Litre
+              <input type="number" id="PPL" />
+            </label>
+            <button class="btn" onclick="finalPrice()">Calculate</button>
+          </div>
+
+          <div class="container dbl">
+            <label
+              >Degree Fahrenheit
+              <input type="number" id="fahrenheit" />
+            </label>
+            <label
+              >Degree Celsius
+              <input type="number" id="celsius" />
+            </label>
+            <button class="btn" onclick="toCelsius()">Calculate</button>
+          </div>
+        </div>
+
+        <div class="container">
+          <label
+            >Miles
+            <input type="number" id="miles" />
+          </label>
+          <label
+            >Kilometeres
+            <input type="number" id="km" />
+          </label>
+          <button class="btn" onclick="toKm()">Calculate</button>
+        </div>
+      </div>
+    </main>
+      <script src="header.js"></script>
+    	<div id="myId"></div>
+	
+    <script>
+      function toCelsius() {
+        var x = (document.getElementById("fahrenheit").value - 32) * 0.556;
+
+        document.getElementById("celsius").value = x.toFixed(0);
+      }
+
+      function finalPrice() {
+        var x = document.getElementById("PPG").value * 0.264;
+        document.getElementById("PPL").value = x.toFixed(3);
+      }
+
+      function toKm() {
+        var x = document.getElementById("miles").value * 1.609344;
+        document.getElementById("km").value = x.toFixed(2);
+      }
+
+      function finalPrice() {
+        var x = document.getElementById("PPG").value * 0.264;
+        document.getElementById("PPL").value = x.toFixed(3);
+      }
+
+      const from_currencyEl = document.getElementById("from_currency");
+      const from_ammountEl = document.getElementById("from_ammount");
+      const to_currencyEl = document.getElementById("to_currency");
+      const to_ammountEl = document.getElementById("to_ammount");
+      const rateEl = document.getElementById("rate");
+      const exchange = document.getElementById("exchange");
+
+      from_currencyEl.addEventListener("change", calculate);
+      from_ammountEl.addEventListener("input", calculate);
+      to_currencyEl.addEventListener("change", calculate);
+      to_ammountEl.addEventListener("input", calculate);
+
+      exchange.addEventListener("click", () => {
+        const temp = from_currencyEl.value;
+        from_currencyEl.value = to_currencyEl.value;
+        to_currencyEl.value = temp;
+        calculate();
+      });
+
+      function calculate() {
+        const from_currency = from_currencyEl.value;
+        const to_currency = to_currencyEl.value;
+
+        fetch(`https://api.exchangerate-api.com/v4/latest/${from_currency}`)
+          .then((res) => res.json())
+          .then((res) => {
+            const rate = res.rates[to_currency];
+            rateEl.innerText = `1 ${from_currency} = ${rate} ${to_currency}`;
+            to_ammountEl.value = (from_ammountEl.value * rate).toFixed(2);
+          });
+      }
+
+      calculate();
+      
+      function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+    </script>
+  </body>
+</html>
