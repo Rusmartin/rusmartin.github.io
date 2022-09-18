@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Before / After </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aleo&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Overlay content -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <a href="us-road-trip-tools.html">US road trip tools</a>
+            <a href="tip-calculator.html">Tip calculator</a>
+            <a href="currency-converter.html">Currency converter</a>
+            <a href="wage-calculator.html">Wage calculator</a>
+            <a href="resume.html">Resume</a>
+        </div>
+    </div>
+    <span style="font-size:30px;cursor:pointer; color:#fff; "onclick="openNav()">&#9776;</span>
+    <div class="home">
+        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+    </div>
+    
+    <div class="top-title">
+        <h1>
+            Before / After Van Build
+        </h1>
+    </div>
+
+    <div class="mainSection">
+
+        <div id="one" class="bal-container">
+            <div class="bal-after">
+                <img src="https://i.postimg.cc/SRCM4YbX/after-1-1.jpg">
+                <div class="bal-afterPosition afterLabel">
+                    After
+                </div>
+            </div>
+
+            <div class="bal-before">
+                <div class="bal-before-inset">
+                    <img src="https://i.postimg.cc/xqVT0kjZ/before.jpg">
+                    <div class="bal-beforePosition beforeLabel">
+                        Before
+                    </div>
+                </div>
+            </div>
+
+            <div class="bal-handle">
+                <span class=" handle-left-arrow"></span>
+                <span class="handle-right-arrow"></span>
+            </div>
+
+        </div>
+
+        <div id="two" class="bal-container">
+            <div class="bal-after">
+                <img src="https://i.postimg.cc/NFGJVtHr/after-from-front-view.jpg">
+                <div class="bal-afterPosition afterLabel">
+                    After
+                </div>
+            </div>
+            <div class="bal-before">
+                <div class="bal-before-inset">
+                    <img src="https://i.postimg.cc/m2XqvPVZ/before-from-front-view.jpg">
+                    <div class="bal-beforePosition beforeLabel">
+                        Before
+                    </div>
+
+                </div>
+            </div>
+            <div class="bal-handle">
+                <span class="handle-left-arrow"></span>
+                <span class="handle-right-arrow"></span>
+
+            </div>
+        </div>
+    </div>
+    <div class="video">
+        <video width="620" height="440" controls>
+        <source src="images/van%20build%20montage.mp4" type="video/mp4">
+        <source src="images/van%20build%20montage.mp4" type="video/ogg">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    
+
+
+    <script src="js/script.js"></script>
+
+    <script>
+        new BeforeAfter({
+            id: '#one'
+        });
+        new BeforeAfter({
+            id: '#two'
+        });
+        new BeforeAfter({
+            id: '#three'
+        });
+        
+              function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+    </script>
+
+</body>
+
+</html>
