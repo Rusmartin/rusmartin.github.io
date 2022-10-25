@@ -150,3 +150,27 @@ select:active {
   }
 }
 
+.pic-gallery {  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "one three"
+    "two three"
+    "four four";
+    width: 60vw;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.one { grid-area: one; height: 350px;}
+
+.three { grid-area: three; height: 700px;}
+
+.two { grid-area: two; height: 350px;}
+
+.four { grid-area: four;}
+
+.radius {
+    border-radius: 10px;
+}
