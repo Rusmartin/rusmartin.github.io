@@ -32,29 +32,47 @@
     </div>
     <main>
       <div id="main">
-        <div class="container">
-          <div class="currency">
-            <select id="from_currency">
-              <option value="CAD" selected>CAD</option>
-              <option value="USD">USD</option>
-            </select>
-            <input type="number" id="from_ammount" placeholder="0" value="1" />
-          </div>
+        
+          
+          <div class="dblgrid">
+          <div class="container dbl">
+              <div class="">
+                  <div class="currency">
+                      <select id="from_currency">
+                          <option value="CAD" selected>CAD</option>
+                          <option value="USD">USD</option>
+                      </select>
+                      <input type="number" id="from_ammount" placeholder="0" value="1" />
+                  </div>
 
-          <div class="middle">
-            <button id="exchange" class="btn">Swap</button>
-            <div class="rate" id="rate"></div>
-          </div>
+                  <div class="middle">
+                      <button id="exchange" class="btn">Swap</button>
+                      <div class="rate" id="rate"></div>
+                  </div>
 
-          <div class="currency">
-            <select id="to_currency">
-              <option value="CAD">CAD</option>
-              <option value="USD" selected>USD</option>
-            </select>
-            <input type="number" id="to_ammount" placeholder="0" />
-          </div>
-        </div>
+                  <div class="currency">
+                      <select id="to_currency">
+                          <option value="CAD">CAD</option>
+                          <option value="USD" selected>USD</option>
+                      </select>
+                      <input type="number" id="to_ammount" placeholder="0" />
+                  </div>
+              </div>
+              </div>
 
+              <div class="container dbl">
+                  <label>
+                      US gallon
+                      <input type="number" id="gallon" />
+                  </label>
+                  <label>
+                      Liter
+                      <input type="number" id="liter" />
+                  </label>
+                  <button class="btn" onclick="toLiter()">Calculate</button>
+              </div>
+          </div>
+          
         <div class="dblgrid">
           <div class="container dbl">
             <label
@@ -116,6 +134,12 @@
         var x = document.getElementById("PPG").value * 0.264;
         document.getElementById("PPL").value = x.toFixed(3);
       }
+        
+      function toLiter() {
+        var x = (document.getElementById("gallon").value) * 3.78541;
+
+        document.getElementById("liter").value = x.toFixed(2);
+      }  
 
       const from_currencyEl = document.getElementById("from_currency");
       const from_ammountEl = document.getElementById("from_ammount");
