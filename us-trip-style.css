@@ -159,13 +159,17 @@ select:active {
     "one three"
     "two three"
     "four four";
-    width: 60.5vw;
-    margin: 30px auto;
+    width: 60%;
+    margin: 50px auto;
     text-align: center;
     grid-gap: 5px;
     background: #fff;
     padding: 5px;
     border-radius: 10px;
+}
+
+img {
+    width: 100%
 }
 
 .one { grid-area: one; height: 350px;}
@@ -183,16 +187,32 @@ select:active {
 @media screen and (max-width: 780px) {
   .pic-gallery {  
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
     "one"
     "two"
     "three"
     "four";
-    width: 85vw;
-    margin: 30px auto;
-    background: none;
+    margin: 0px auto;
+    text-align: center;
+    grid-gap: 5px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    width: 90VW;
+      height: 995px
 }
+    .mobile-pic {
+        height: 200px
+    }
+        
+    .verticale-pic {
+        height: 450px
+    }
+    .one { grid-area: one; height: 200px;}
+
+    .three { grid-area: three; height: 450px;}
+
+    .two { grid-area: two; height: 200px;}
 }
