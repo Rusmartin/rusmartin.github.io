@@ -1,25 +1,17 @@
 body {
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: 'Corben', cursive;
     background-color: #f4f4f4;
     text-align: center;
     border: black solid;
-    font-size: 100%
+    font-size: 120%; 
 }
 a {
     color: #333;
     display: inline-block;
     text-align: center;
     color: #333;
-    background: #f4f4f4; /* default color */
     padding: 5px;
-    background: linear-gradient(to left, #f4f4f4 50%, #db3333 50%) right;
     background-size: 200%;
-    transition: .35s ease-out;
-}
-a:hover {
-    background-color: #db3333;
-    background-position: left;
-    color: #fff;
 }
 
 .container {
