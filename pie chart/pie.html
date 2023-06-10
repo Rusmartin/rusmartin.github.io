@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Work schedule</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" type="text/css" href="pie-style.css">
+</head>
+<body>
+  <main class="mainly">
+    <div class="tile">
+      <h1>While no work</h1>
+    <div class="container">
+        <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+    <div class="tile">
+      <h1>While work</h1>
+    <div class="container">
+        <canvas id="pieChart2"></canvas>
+    </div>
+  </div>
+  </main>
+  <script>
+    // Data for the pie chart
+    var data = {
+      labels: ['Work', 'Prospection', 'Education', 'Own Project', 'Planning'],
+      datasets: [{
+        data: [30, 25, 30, 10, 5],
+        backgroundColor: ['#EEE2DE', '#EA906C', '#B31312', "#2B2A4C", "#1B9C85"]
+      }]
+    };
+    var data2 = {
+      labels: ['Work', 'Prospection', 'Education', 'Own Project', 'Planning'],
+      datasets: [{
+        data: [55, 15, 15, 10, 5],
+        backgroundColor: ['#EEE2DE', '#EA906C', '#B31312', "#2B2A4C", "#1B9C85"]
+      }]
+    };
+
+    // Options for the pie chart
+    var options = {
+      responsive: true
+    };
+
+    // Create the pie chart
+    var ctx = document.getElementById('pieChart').getContext('2d');
+    var myPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: data,
+      options: options
+    });
+        // Create 2nd pie chart
+        var ctx = document.getElementById('pieChart2').getContext('2d');
+    var myPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: data2,
+      options: options
+    });
+  </script>
+</body>
+</html>

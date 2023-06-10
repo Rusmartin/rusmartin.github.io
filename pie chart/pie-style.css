@@ -1,0 +1,28 @@
+#pieChart, #pieChart2{
+    height: 500px !important;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.mainly {
+    display: flex;
+    justify-content: space-evenly;
+    
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: auto;
+}
+.tile {
+    border: solid 2px #333;
+    border-radius: 4px;
+    padding: 20px;
+}
+.tile h1 {
+    text-align: center;
+}
