@@ -9,11 +9,9 @@
     justify-content: center;
     align-content: center;
 }
-
 .mainly {
     display: flex;
     justify-content: space-evenly;
-    
     flex-wrap: wrap;
     max-width: 80%;
     margin: auto;

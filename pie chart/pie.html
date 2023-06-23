@@ -5,8 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" type="text/css" href="pie-style.css">
+  <link rel="stylesheet" href="overall.css">
+  <link rel="stylesheet" href="us-trip-style.css" />
 </head>
 <body>
+      <!-- Overlay content -->
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a href="us-road-trip-tools.html">US road trip tools</a>
+          <a href="tip-calculator.html">Tip calculator</a>
+          <a href="currency-converter.html">Currency converter</a>
+          <a href="wage-calculator.html">Wage calculator</a>
+          <a href="resume.html">Resume</a>
+          <a href="before-after.html">Van Build</a>
+        </div>
+      </div>
+      
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+          <div class="home">
+              <a href="index.html"><i class="fa-solid fa-house"></i></a>
+          </div>
   <main class="mainly">
     <div class="tile">
       <h1>While no work</h1>
@@ -57,6 +76,14 @@
       data: data2,
       options: options
     });
+
+    function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
   </script>
 </body>
 </html>
