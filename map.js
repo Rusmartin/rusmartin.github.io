@@ -6,8 +6,8 @@ var statesData = {
         "properties": {
             "name": "France",
             "days": 20,
-            "density": 'Martin: Aug 31st to Sept 20th',
-            "Lauren": 'Lauren: Sept 12th to Sept 20th'
+            "density": 'Martin: Aug 31st to Sept 20th, Oct 7th to Oct 11th',
+            "Lauren": 'Lauren: Sept 12th to Sept 20th, Oct 10th to Oct 11th'
         },
         "geometry": {
             "type": "Polygon",
